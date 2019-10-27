@@ -33,4 +33,4 @@ function draw(n,data){
 
 let matrix32 = document.getElementById('32x32');
 let matrix4 = document.getElementById('4x4');
-matrix32.addEventListener('click', draw(32,'data\32x32.json'));
+matrix4.addEventListener('click', draw(4,'data\4x4.json'));

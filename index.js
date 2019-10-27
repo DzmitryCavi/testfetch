@@ -24,7 +24,7 @@ function draw(n,data){
           
              for(var row = 0; row < height; row++) {
                  for(var col = 0; col < width; col++) {
-                    ctx.fillStyle = makeColor(cdata[j][i]);
+                    ctx.fillStyle = makeColor(cdata[col][row]);
                     ctx.fillRect(col * scale, row * scale, scale, scale);
                 }
             }

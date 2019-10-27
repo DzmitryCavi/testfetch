@@ -24,13 +24,23 @@ function draw(n,data){
           
              for(var row = 0; row < height; row++) {
                  for(var col = 0; col < width; col++) {
-                    ctx.fillStyle = makeColor(cdata[col][row]);
+                    ctx.fillStyle = makeColor(cdata[j][i]);
                     ctx.fillRect(col * scale, row * scale, scale, scale);
                 }
             }
-         });
+         });       
+}
+ function drawPNG(){
+    const img = new Image(canvas.width, canvas.height);
+    img.onload = ()=>{
+        ctx.drawImage(img, 0, 0);
+    }
+    img.src = 'data/image.png';
 }
 
-let matrix32 = document.getElementById('32x32');
-let matrix4 = document.getElementById('4x4');
+let matrix32 = document.getElementById('set_32x32');
+let matrix4 = document.getElementById('set_4x4');
+let png = document.getElementById('set_png');
 matrix4.addEventListener('click', draw(4,'data/4x4.json'));
+matrix32.addEventListener('click', draw(4,'data/32x32.json'));
+png.addEventListener('click', drawPNG());
